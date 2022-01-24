@@ -1,5 +1,4 @@
-import answer from 'the-answer';
-
+const answer = 42;
 class Person {
   name: string;
   constructor(name: string) {
