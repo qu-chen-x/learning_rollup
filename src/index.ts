@@ -1,8 +1,9 @@
 import answer from 'the-answer';
 
 class Person {
-  constructor(name) {
-    this.name = name;
+  name: string;
+  constructor(name: string) {
+    name = name;
   }
   sayHello() {
     console.log(`Hello, I'm ${this.name}`);

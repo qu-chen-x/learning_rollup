@@ -7,7 +7,7 @@ const babelConfigs = require('./babel.config');
 const extensions = ['.js', '.ts', '.tsx'];
 
 export default {
-  input: 'src/index.js',
+  input: 'src/index.ts',
   output: {
     dir: 'dist',
     format: 'umd',
