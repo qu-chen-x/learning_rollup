@@ -1,4 +1,5 @@
 import nodeResolvePlugin from '@rollup/plugin-node-resolve';
+import commonJSPlugin from '@rollup/plugin-commonjs';
 
 export default {
   input: 'src/index.js',
@@ -7,5 +8,5 @@ export default {
     format: 'umd',
     name: 'myLibrary',
   },
-  plugins: [nodeResolvePlugin()],
+  plugins: [nodeResolvePlugin(), commonJSPlugin()],
 };
