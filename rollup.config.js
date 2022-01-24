@@ -1,7 +1,9 @@
+import path from 'path';
 import nodeResolvePlugin from '@rollup/plugin-node-resolve';
 import commonJSPlugin from '@rollup/plugin-commonjs';
 import babelPlugin from '@rollup/plugin-babel';
 import typescriptPlugin from '@rollup/plugin-typescript';
+import esbuildPlugin from 'rollup-plugin-esbuild';
 
 const babelConfigs = require('./babel.config');
 
@@ -32,9 +34,26 @@ function createUMDConfig(input, output) {
       name: 'myLibrary',
     },
     plugins: [
-      nodeResolvePlugin(),
+      nodeResolvePlugin({ extensions }),
       commonJSPlugin(),
       babelPlugin({ ...babelConfigs, extensions, babelHelpers: 'bundled' }),
+    ],
+  };
+}
+
+function createESMConfig(input, output) {
+  return {
+    input,
+    output: [
+      { file: `${output}.js`, format: 'esm' },
+      { file: `${output}.mjs`, format: 'esm' },
+    ],
+    plugins: [
+      [nodeResolvePlugin({ extensions })],
+      esbuildPlugin({
+        minify: false,
+        tsconfig: path.resolve('./tsconfig.json'),
+      }),
     ],
   };
 }
@@ -42,4 +61,5 @@ function createUMDConfig(input, output) {
 export default [
   createDeclarationConfig('src/index.ts', 'dist'),
   createUMDConfig('src/index.ts', 'dist/umd/index.js'),
+  createESMConfig('src/index.ts', 'dist/esm/index'),
 ];
