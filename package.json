@@ -3,5 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "seanbruceful <seanbruce520@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "rollup": "^2.66.0"
+  }
 }
