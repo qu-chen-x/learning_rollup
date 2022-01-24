@@ -1,5 +1,7 @@
+import answer from 'the-answer';
+
 function foo() {
-  console.log('hello from the other side.');
+  console.log(`the ultimate answer of the universe is: ${answer}`);
 }
 
 export default foo;
