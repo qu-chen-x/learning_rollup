@@ -6,16 +6,20 @@ const babelConfigs = require('./babel.config');
 
 const extensions = ['.js', '.ts', '.tsx'];
 
-export default {
-  input: 'src/index.ts',
-  output: {
-    dir: 'dist',
-    format: 'umd',
-    name: 'myLibrary',
-  },
-  plugins: [
-    nodeResolvePlugin(),
-    commonJSPlugin(),
-    babelPlugin({ ...babelConfigs, extensions, babelHelpers: 'bundled' }),
-  ],
-};
+function createUMDConfig(input, output) {
+  return {
+    input,
+    output: {
+      file: output,
+      format: 'umd',
+      name: 'myLibrary',
+    },
+    plugins: [
+      nodeResolvePlugin(),
+      commonJSPlugin(),
+      babelPlugin({ ...babelConfigs, extensions, babelHelpers: 'bundled' }),
+    ],
+  };
+}
+
+export default [createUMDConfig('src/index.ts', 'dist/umd/index.js')];
