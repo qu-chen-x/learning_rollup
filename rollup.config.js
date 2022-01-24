@@ -43,7 +43,7 @@ function createUMDConfig(input, output) {
     plugins: [
       nodeResolvePlugin({ extensions }),
       commonJSPlugin(),
-      babelPlugin({ ...babelConfigs, extensions, babelHelpers: 'bundled' }),
+      babelPlugin({ ...babelConfigs, extensions, babelHelpers: 'runtime' }),
     ],
   };
 }
