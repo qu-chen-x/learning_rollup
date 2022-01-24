@@ -1,8 +1,8 @@
 {
-  "name": "rollup-library",
-  "version": "1.0.0",
+  "name": "rollup-library-demo",
+  "version": "0.1.0",
   "main": "index.js",
-  "author": "seanbruceful <seanbruce520@gmail.com>",
+  "author": "seanbruce <seanbruce520@gmail.com>",
   "license": "MIT",
   "scripts": {
     "build": "rollup -c"
