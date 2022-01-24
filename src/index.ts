@@ -1,19 +1,9 @@
-const answer = 42;
-class Person {
-  name: string;
-  constructor(name: string) {
-    name = name;
-  }
-  sayHello() {
-    console.log(`Hello, I'm ${this.name}`);
-  }
+import fetch from 'unfetch';
 
-  static MAXIMUM_AGE = 120;
-  static MINIMUM_AGE = 0;
+async function login() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const data: any = await res.json();
+  console.log({ data });
 }
 
-const foo = () => {
-  console.log(`the ultimate answer of the universe is: ${answer}`);
-};
-
-export { foo, Person };
+export { login };

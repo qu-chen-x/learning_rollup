@@ -24,6 +24,6 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
-    "the-answer": "^1.0.0"
+    "unfetch": "^4.2.0"
   }
 }
