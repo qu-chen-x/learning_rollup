@@ -8,7 +8,7 @@
   "author": "seanbruce <seanbruce520@gmail.com>",
   "license": "MIT",
   "files": [
-    "**"
+    "dist"
   ],
   "scripts": {
     "build": "rollup -c"
