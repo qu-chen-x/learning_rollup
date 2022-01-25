@@ -1,11 +1,15 @@
 {
   "name": "@seanbrucejkd/rollup-library-demo",
   "version": "0.1.1",
-  "main": "./index.js",
-  "types": "./index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/esm/index.mjs",
   "homepage": "https://github.com/seanbruce/rollup-library-demo",
   "author": "seanbruce <seanbruce520@gmail.com>",
   "license": "MIT",
+  "files": [
+    "**"
+  ],
   "scripts": {
     "build": "rollup -c"
   },
