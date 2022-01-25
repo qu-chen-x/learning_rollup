@@ -1,7 +1,9 @@
 {
   "name": "@seanbrucejkd/rollup-library-demo",
   "version": "0.1.0",
-  "main": "index.js",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "homepage": "https://github.com/seanbruce/rollup-library-demo",
   "author": "seanbruce <seanbruce520@gmail.com>",
   "license": "MIT",
   "scripts": {
